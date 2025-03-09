@@ -7,26 +7,41 @@
 <body>
     <header>
         <h1>Welcome to My Kitchen!</h1>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="recipes.html">Classic Recipe</a>
+            <a href="about.html">About Us</a>
+        </div>
     </header>
-    
-    <h2>Why Choose Overnight Oats?</h2>
-    <section>
-        <p><b>Overnight oats</b> are a fantastic way to start your day with a nutritious and convenient breakfast. They are easy to prepare, packed with essential nutrients, and can be customized to fit any taste preference. Whether you prefer sweet, savory, or a mix of both, there's an overnight oats recipe for you.</p>
-        <p>With <i>minimal effort</i>, you can enjoy a delicious and healthy breakfast without the morning rush. Simply mix your ingredients, refrigerate overnight, and wake up to a ready-to-eat meal. This method preserves nutrients and enhances flavor, making it a great option for health-conscious individuals.</p>
-    </section>
-    
-    <h2>Facts About Overnight Oats:</h2>
-    <ol>
-        <li>They are perfect for <b>meal prep</b> and save time in the morning.</li>
-        <li>Overnight oats can be tailored to meet <i>dietary needs</i>, such as vegan, gluten-free, or high-protein diets.</li>
-        <li>They are rich in fiber, protein, and essential vitamins, promoting overall health.</li>
-    </ol>
-    
+
+    <!-- Flexbox container to align sections side by side -->
+    <div class="content-container">
+        <div class="why-choose">
+            <h2>Why Choose Overnight Oats?</h2>
+            <p><b>Overnight oats</b> are a fantastic way to start your day with a nutritious and convenient breakfast. They are easy to prepare, packed with essential nutrients, and can be customized to fit any taste preference. Whether you prefer sweet, savory, or a mix of both, there's an overnight oats recipe for you.</p>
+            <p>With <i>minimal effort</i>, you can enjoy a delicious and healthy breakfast without the morning rush. Simply mix your ingredients, refrigerate overnight, and wake up to a ready-to-eat meal. This method preserves nutrients and enhances flavor, making it a great option for health-conscious individuals.</p>
+        </div>
+
+        <div class="facts">
+            <div>
+            <h2>Facts About Overnight Oats:</h2>
+            <ol>
+                <li>They are perfect for <b>meal prep</b> and save time in the morning.</li>
+                <li>Overnight oats can be tailored to meet <i>dietary needs</i>, such as vegan, gluten-free, or high-protein diets.</li>
+                <li>They are rich in fiber, protein, and essential vitamins, promoting overall health.</li>
+            </ol>
+            </div>
+            <div>
+                <img src="images/overnight_oats_stock.jpeg" alt="OvernightOats">
+            </div>
+        </div>
+    </div>
+
     <aside>
         <h2>Tip of the Day!</h2>
         <p>For extra creaminess, use a mix of <b>Greek yogurt</b> and your favorite milk alternative.</p>
     </aside>
-    
+
     <h2><u>Featured Recipes</u></h2>
     <table>
         <tr>
@@ -50,9 +65,26 @@
             <td><a href="https://www.tiktok.com/@coops.kitchen/video/7462040236613242142" target="_blank"><u>tiktok.com</u></a></td>
         </tr>
     </table>
-    
+
     <footer>
         <p><b>Thanks for visiting my kitchen!</b></p>
     </footer>
+
+    <input id="nameInput" type="text" placeholder="Enter name for random draw!">
+    <button onclick="alertNameInput()">Submit</button>
+
+    <script>
+        
+
+        function alertNameInput() {
+
+            let name = document.querySelector("#nameInput").value;
+
+            alert("Thank you for entering the draw " + name + "!")
+        }
+        
+
+    </script>
+
 </body>
 </html>

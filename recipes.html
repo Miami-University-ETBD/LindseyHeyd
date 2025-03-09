@@ -9,6 +9,11 @@
 <body>
     <header>
         <h1>Try This Classic Recipe!</h1>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="recipes.html">Classic Recipe</a>
+            <a href="about.html">About Us</a>
+        </div>
     </header>
 
     <section>
@@ -52,6 +57,17 @@
     <footer>
         <p><b>Enjoy this recipe!</b></p>
     </footer>
+    <p>Sumbit a photo of your overnight oats to us!</p>
+    <input id="nameInput" type="file">
+    <button onclick="alertNameInput()">Submit</button>
+<script>
+    function alertNameInput() {
+
+    let name = document.querySelector("#nameInput").value;
+
+    alert("Thank you for submitting your oats!")
+    }
+</script>
 </body>
 
 </html>
