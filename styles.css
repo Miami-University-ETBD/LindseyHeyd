@@ -32,6 +32,26 @@ header {
     font-family: 'Playfair Display', serif;
 }
 
+/* Navigation Bar Styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.navbar a {
+    color: var(--bg-color);
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+.navbar a:hover {
+    color: var(--primary-color);
+}
+
 /* Section and Aside Styling */
 section, aside {
     background-color: var(--table-bg);
@@ -79,19 +99,6 @@ th {
     color: var(--text-color);
 }
 
-/* List Styling */
-ul, ol {
-    padding-left: 30px;
-    margin: 10px 0;
-}
-
-ul li, ol li {
-    margin-bottom: 5px;
-    padding: 5px;
-    background-color: var(--table-bg);
-    border-radius: 5px;
-}
-
 /* Footer */
 footer {
     background-color: var(--primary-color);
@@ -99,4 +106,52 @@ footer {
     text-align: center;
     padding: 10px;
     margin-top: 20px;
+}
+
+/* Flexbox container for side-by-side sections */
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Space between sections */
+    padding: 20px;
+}
+
+/* Individual sections inside the flexbox */
+.why-choose, .facts {
+    flex: 1; /* Equal width */
+    background-color: var(--table-bg); /* Matching background */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Images */
+img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: var(--table-bg);
+    margin: 5px;
+    width: 200px;
+    height: 200px;
+    border-radius: 40px;
+}
+
+/* Image Alignment*/
+.facts {
+    display: flex;
+}
+
+/* To Make Images Smaller*/
+.smaller {
+    margin: 5px;
+    width: 100px;
+    height: 100px;
+    border-radius: 40px;
+}
+
+/* Top-Rated Recipes Flex*/
+.top-rated {
+    display: flex;
+    justify-content: space-around;
 }
