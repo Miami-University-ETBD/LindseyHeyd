@@ -3,6 +3,10 @@
 <head>
     <title>Overnight Oats</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <style> 
+        .collapsible-header {background-color: #1E4D6B}
+    </style>
 </head>
 <body>
     <header>
@@ -37,11 +41,12 @@
             </div>
         </div>
     </div>
-
-    <aside>
-        <h2>Tip of the Day!</h2>
-        <p>For extra creaminess, use a mix of <b>Greek yogurt</b> and your favorite milk alternative.</p>
-    </aside>
+    <ul class="collapsible">
+        <li>
+          <div class="collapsible-header">Tap to see the Tip of the Day!</div>
+          <div class="collapsible-body"><span>For extra creaminess, use a mix of <b>Greek yogurt</b> and your favorite milk alternative.</span></div>
+        </li>
+      </ul>
 
     <h2><u>Featured Recipes</u></h2>
     <table>
@@ -86,6 +91,12 @@
         
 
     </script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.collapsible');
+        var instances = M.Collapsible.init(elems);
+    });
+</script>
 </body>
 </html>
