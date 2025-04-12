@@ -12,11 +12,11 @@
         .white-text { color: #ffffff; }
         .black-text { color: #212121; }
         .navbar a { color: #ffeb3b; font-weight: bold; }
-        .page-footer { background-color: #6d4c41; }
+        .page-footer { background-color: #305179; }
         .btn-custom { background-color: #ff9800; color: white; }
         h1, h2, h5, p { color: #212121; } /* Ensures all text contrasts well */
         blockquote { color: #66bb6a; } /* Light green blockquote text */
-        #recipes h2 { color: #66bb6a; } /* Light green header text for recipe section */
+        #recipes h2, #radio-section h2 { color: #66bb6a; } /* Light green header text for recipe section */
     </style>
 </head>
 <body>
@@ -71,6 +71,30 @@
             </div>
         </div>
     </div>
+    <div id="radio-section" class="section container">
+        <h2>Select Your Favorite Overnight Oats</h2>
+        <form>
+            <p>
+                <label>
+                    <input name="oats" type="radio" value="Berry Bliss" onclick="displayOats()"/>
+                    <span>Berry Bliss</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input name="oats" type="radio" value="Chocolate Peanut Butter" onclick="displayOats()"/>
+                    <span>Chocolate Peanut Butter</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input name="oats" type="radio" value="Banana Nut" onclick="displayOats()"/>
+                    <span>Banana Nut</span>
+                </label>
+            </p>
+        </form>
+        <div id="oats-response"></div>
+    </div>
 
     <!-- Media Section -->
     <div id="media" class="section section-bg">
@@ -86,18 +110,76 @@
             </div>
         </div>
     </div>
+    <h3>Photos from our customers:</h3>
+    <div class="carousel">
+        <a class="carousel-item" href="#one!"><img src="./images/Chocolate-overnight-oats.jpg"></a>
+        <a class="carousel-item" href="#two!"><img src="./images/berry-bliss.jpg"></a>
+        <a class="carousel-item" href="#three!"><img src="./images/matcha-green-tea.jpg"></a>
+        <a class="carousel-item" href="#four!"><img src="./images/overnight_oats_stock.jpeg"></a>
+      </div>
 
     <!-- Footer -->
     <footer class="page-footer header-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col s12 center-align">
-                    <p class="white-text">&copy; 2025 Overnight Oats Heaven. All rights reserved.</p>
-                </div>
-            </div>
+         <!-- Email Feedback Section -->
+   <div id="feedback-section" class="section container">
+    <h2>Subscribe for Updates</h2>
+    <form onsubmit="submitEmail(event)">
+        <div class="input-field">
+            <input id="email" type="email" required>
+            <label for="email">Email</label>
         </div>
+        <button type="submit" class="btn waves-effect waves-light">Subscribe</button>
+    </form>
+    <div id="email-response"></div>
+</div>
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Check Your email-response</h4>
+    <p id="modal-content-text"></p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+      >Close</a
+    >
+  </div>
+</div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        // Initialize modal
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems);
+        });
+ 
+ 
+        // Function to display selected pastry
+        function displayOats() {
+            const selectedPastry = document.querySelector('input[name="oats"]:checked').value;
+            document.getElementById('oats-response').innerText = `You selected: ${selectedPastry}`;
+        }
+        // Function to handle email subscription form submission
+        function submitEmail(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            document.getElementById('email-response').innerText = `Thank you for subscribing! Updates will be sent to: ${email}`;
+            document.getElementById('email').value = ''; // Clear the input
+ 
+ 
+            // Display modal
+            const modalText = document.getElementById('modal-content-text');
+            modalText.innerText = `Thank you for subscribing! Updates will be sent to: ${email}`;
+            const modal = M.Modal.getInstance(document.getElementById('modal1'));
+            modal.open();
+        }
+
+        // Carousel
+            document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.querySelectorAll('.carousel');
+                var instances = M.Carousel.init(elems);
+            });
+    </script>
+ 
 </body>
 </html>
