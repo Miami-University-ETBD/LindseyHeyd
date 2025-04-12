@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overnight Oats</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Toggle Slide Interaction -->
+    <script> 
+        $(document).ready(function(){
+            $("#flip").click(function(){
+                $("#panel").slideToggle("slow");
+            });
+        });
+    </script>
+
+    <!-- Click to Hide Paragraphs -->
+    <script>
+        $(document).ready(function(){
+            $(".click-hide p").click(function(){
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <!-- Toggle Paragraphs Visibility -->
+    <script>
+        $(document).ready(function(){
+            $(".toggle-btn").click(function(){
+                $(".toggle-text p").toggle();
+            });
+        });
+    </script>
+
+    <style> 
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #f7e8d0;
+        }
+
+        .navbar a {
+            margin: 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px 0;
+            color: white;
+        }
+
+        #panel, #flip {
+            padding: 10px;
+            text-align: center;
+            background-color: #f4e2d8;
+            color: #333;
+            border: solid 1px #c3c3c3;
+        }
+
+        #panel {
+            padding: 20px;
+            display: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #fff;
+            color: #333;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        button:hover {
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header of the website -->
+    <header>
+        <h1>Welcome to Overnight Oats Heaven!</h1>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="recipes.html">Classic Recipe</a>
+            <a href="about.html">About Us</a>
+            <a href="materialize.html">Materialize</a>
+            <a href="jquery.html">JQuery</a>
+        </div>
+    </header>
+
+    <!-- Slide Toggle Section -->
+    <section style="background-color: #8575be;">
+        <h2>Oats Benefits (Click to Reveal)</h2>
+        <div id="flip">Click here to learn why oats are amazing!</div>
+        <div id="panel">
+            <ul>
+                <li>Rich in fiber, which helps digestion</li>
+                <li>Good source of plant-based protein</li>
+                <li>Helps lower cholesterol</li>
+                <li>Perfect base for a customizable breakfast</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Click to Hide Section -->
+    <section class="click-hide" style="background-color: #5d9c99;">
+        <h2>Click to Hide Fun Oat Facts</h2>
+        <p>Oats can soak overnight in milk or yogurt—no cooking needed!</p>
+        <p>Chia seeds are a popular mix-in for texture and nutrients.</p>
+        <p>You can prep a whole week’s worth of jars at once!</p>
+    </section> 
+
+    <!-- Toggle Visibility Section -->
+    <section class="toggle-text" style="background-color: #db9760;">
+        <h2>Toggle to Show/Hide Flavor Ideas</h2>
+        <button class="toggle-btn">Toggle Flavor Combos</button>
+        <p>Peanut Butter + Banana + Cinnamon</p>
+        <p>Blueberries + Almonds + Honey</p>
+        <p>Strawberries + Coconut Milk + Chia Seeds</p>
+    </section>
+</body>
+</html>
